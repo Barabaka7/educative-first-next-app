@@ -10,9 +10,13 @@ export default function Search(initialData) {
   return (
     <>
       <Head>
-        <title>Search</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles.css" />
+        <title>Search results for: {router.query.searchTerm}</title>
+        <meta
+          name="description"
+          content={initialData.someNewGifys
+            .map((each) => each.title)
+            .join(", ")}
+        ></meta>
       </Head>
       <p>
         Go <Link href="/">HOME</Link>

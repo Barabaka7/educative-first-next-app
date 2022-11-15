@@ -1,5 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 
@@ -20,7 +21,6 @@ export default function Home(initialData) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let someNewGifys = await fetchSomeGifs(searchTerm);
-    console.log(someNewGifys);
     setSearchResults(someNewGifys);
   };
 
@@ -28,11 +28,18 @@ export default function Home(initialData) {
     <>
       <div className="container">
         <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="/styles.css" />
+          <title>Giphy Search App</title>
+          <meta
+            name="description"
+            content="This my first attempt to create NextJS app and it was successfull."
+          ></meta>
         </Head>
+
         <h1>Giphy Search App</h1>
+
+        <div className="logo-container">
+          <Image src="/logo.png" alt="logo" width={200} height={200} />
+        </div>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -49,7 +56,7 @@ export default function Home(initialData) {
 
         <p>
           Share this search with others:
-          <Link href="/search/[pid]" as={`/search/${searchTerm}`}>
+          <Link href={`/search/${searchTerm}`}>
             {`http://localhost:3000/search/${searchTerm}`}
           </Link>
         </p>

@@ -6,9 +6,7 @@ export default function About() {
     <>
       <div className="container">
         <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="stylesheet" href="/styles.css" />
+          <title>About Page</title>
         </Head>
         <h1>About</h1>{" "}
         <p>
