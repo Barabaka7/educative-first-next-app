@@ -66,7 +66,12 @@ export default function Home(initialData) {
             return (
               <div key={index}>
                 <h3>{each.title}</h3>
-                <img src={each.images.original.url} alt={each.title} />
+                <Image
+                  src={each.images.original.url}
+                  alt={each.title}
+                  width={0}
+                  height={0}
+                />
               </div>
             );
           })}

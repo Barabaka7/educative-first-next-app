@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
 import { fetchSomeGifs } from "../../helpers/fetchSomeData";
@@ -28,7 +29,12 @@ export default function Search(initialData) {
           return (
             <div key={index}>
               <h3>{each.title}</h3>
-              <img src={each.images.original.url} alt={each.title} />
+              <Image
+                src={each.images.original.url}
+                alt={each.title}
+                width={0}
+                height={0}
+              />
             </div>
           );
         })}

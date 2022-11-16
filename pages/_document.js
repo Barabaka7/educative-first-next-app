@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles.css" />
+        {/* <link rel="stylesheet" href="/styles.css" /> */}
       </Head>
       <body>
         <Main />
