@@ -7,16 +7,16 @@ import { fetchSomeGifs } from "../../helpers/fetchSomeData";
 export default function Search(initialData) {
   const router = useRouter();
 
+  const searchTitle = `Search results for: ${router.query.searchTerm}`;
+  const searchMeta = initialData.someNewGifys
+    .map((each) => each.title)
+    .join(", ");
+
   return (
     <>
       <Head>
-        <title>Search results for: {router.query.searchTerm}</title>
-        <meta
-          name="description"
-          content={initialData.someNewGifys
-            .map((each) => each.title)
-            .join(", ")}
-        ></meta>
+        <title>{searchTitle}</title>
+        <meta name="description" content={searchMeta}></meta>
       </Head>
       <p>
         Go <Link href="/">HOME</Link>
